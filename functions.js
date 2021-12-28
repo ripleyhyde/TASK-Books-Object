@@ -6,7 +6,8 @@
  */
 
 const books = require("./books.json");
-// console.log(book[0]);
+
+// console.log(books[0]);
 
 /**************************************************************
  * numberOfAuthors(book)
@@ -15,8 +16,12 @@ const books = require("./books.json");
  ****************************************************************/
 function numberOfAuthors(book) {
   // Your code here
+  console.log(book.authors.length);
+  // OR THIS
+  return book.authors.length;
 }
-// console.log(numberOfAuthors(books[0]))
+
+// console.log(numberOfAuthors(books[0]));
 
 /**************************************************************
  * getBookById(bookId, books):
@@ -27,9 +32,11 @@ function numberOfAuthors(book) {
  * BONUS: use iteration method `.find()`
  ****************************************************************/
 function getBookById(bookId, books) {
-  // Your code here
+  // books.id.find((book) => book.id == bookId);
+
+  return books.find((book) => book.id === bookId);
 }
-// console.log(getBookById(38, books))
+console.log(getBookById(38, books));
 
 /**************************************************************
  * getbookByauthorName(authorName, books):
@@ -40,9 +47,9 @@ function getBookById(bookId, books) {
  * BONUS: use iteration methods `.find()` and `.some()`
  ****************************************************************/
 function getbookByauthorName(authorName, books) {
-  // Your code here
+  return books.authors.find();
 }
-// console.log(getbookByauthorName("Neil Gaiman", books));
+console.log(getbookByauthorName("Neil Gaiman", books));
 
 /**************************************************************
   * addSummaryToBook(summary, book):
